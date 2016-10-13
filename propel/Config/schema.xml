@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="my_user_table" idMethod="native" phpName="MyUserTable">
+    <column name="id_my_user_table" phpName="IdMyUserTable" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255"/>
+    <column name="password" phpName="Password" type="LONGVARCHAR"/>
+    <column name="is_active" phpName="IsActive" type="TINYINT" required="true" defaultValue="1"/>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP"/>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP"/>
+    <column name="last_login" phpName="LastLogin" type="TIMESTAMP"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+    <behavior name="timestampable" />
+  </table>
+</database>

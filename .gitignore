@@ -1,0 +1,7 @@
+vendor/*
+composer.phar
+propel/Base
+propel/Map
+propel/Config/config.php
+propel.yml
+

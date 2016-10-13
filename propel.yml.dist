@@ -1,0 +1,23 @@
+propel:
+    paths:
+        schemaDir: propel/Config
+        phpConfDir: propel/Config
+        phpDir: propel
+      
+    database:
+        connections:
+            default:
+                adapter: mysql
+                dsn: mysql:host=localhost;dbname=yourdatabase
+                user: youruser
+                password: yourpassword
+                settings:
+                    charset: utf8
+    generator:
+        defaultConnection: default
+        connections:
+          - default
+    runtime:
+        defaultConnection: default
+        connections:
+          - default
