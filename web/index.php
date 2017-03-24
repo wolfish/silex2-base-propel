@@ -17,6 +17,8 @@ if ($app['debug']) {
 
 // Add global constants here (if a lot, move it to seperate file)
 const upload_dir = __DIR__ . '/uploads/';
+const web_dir = __DIR__ . '/';
+const project_dir = __DIR__ . '/../';
 
 // services (firewall, twig, user, etc)
 require_once __DIR__ . '/../src/controller/Services.php';

@@ -1,6 +1,8 @@
-#Silex 2 - clean#
+# Silex 2 - clean #
 
 **This is port from Silex 1.3 - many elements still need re-implementation**
+
+(**REQUIRES PHP >= 7.0**) 
 
 Use this for any Silex 2 project, this package comes with:
 
@@ -12,9 +14,10 @@ Use this for any Silex 2 project, this package comes with:
 
 ## How to start
 
-1. Configure `propel.yml` with your database credentials
-2. Run `./p config:convert`
-3. Create database model:
+1. Configure `propel.yml.dist` with your database credentials
+2. Copy/rename it to `propel.yml`
+3. Run `./p config:convert`
+4. Create database model:
 
 #### Option 1 - Build schema.xml
   - Edit `propel/Config/schema.xml` to your database model
@@ -39,3 +42,4 @@ Use this for any Silex 2 project, this package comes with:
 6. Create structure of files in `src` dir as you require with this guideance:
   - Put controllers in `src/controller` and views in `src/view`
   - It's recommended to create directories for views like for `frontendController.php` it could be `src/view/frontend/myView.html.twig`
+7. Add your controllers in `web/index.php`

@@ -6,8 +6,8 @@ $app->register(new Silex\Provider\SessionServiceProvider());
  * PROPEL
  */
 $app->register(new Propel\Silex\PropelServiceProvider(), array(
-    'propel.config_file' => '/var/www/sportujmy_test/propel/Config/config.php',
-    'propel.model_path' => '/var/www/sportujmy_test/propel',
+    'propel.config_file' => project_dir . 'propel/Config/config.php',
+    'propel.model_path' => project_dir . 'propel',
 ));
 
 /**
@@ -27,7 +27,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
         // 'cache' => true,
         'strict_variables' => true,
         'debug' => $app['debug'],
-        'autoescape' => true
+        'autoescape' => 'html'
     )
 ));
 
@@ -35,7 +35,8 @@ $app->extend('twig', function ($twig, $app) {
     $twig->addFunction(new \Twig_SimpleFunction('asset', function ($asset) {
         return sprintf('/%s', ltrim($asset, '/'));
     }));
-    
+
+    // Month names in Polish, change it to your language
     $twig->addGlobal('monthArray', array(
         1 => 'Styczeń',
         2 => 'Luty',
