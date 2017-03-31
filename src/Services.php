@@ -1,4 +1,5 @@
 <?php
+
 $app->register(new Silex\Provider\RoutingServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 
@@ -18,11 +19,16 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'locale_fallbacks' => array('pl'),
 ));
 
+$app->extend('translator', function($translator, $app) {
+    $translator->addResource('xliff', __DIR__ . '/translation/pl.xlf', 'pl');
+    return $translator;
+});
+
 /**
  * TWIG CONFIG
  */
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__ . '/../',
+    'twig.path' => __DIR__ . '/',
     'twig.options' => array(
         // 'cache' => true,
         'strict_variables' => true,
@@ -36,28 +42,27 @@ $app->extend('twig', function ($twig, $app) {
         return sprintf('/%s', ltrim($asset, '/'));
     }));
 
-    // Month names in Polish, change it to your language
     $twig->addGlobal('monthArray', array(
-        1 => 'Styczeń',
-        2 => 'Luty',
-        3 => 'Marzec',
-        4 => 'Kwiecień',
-        5 => 'Maj',
-        6 => 'Czerwiec',
-        7 => 'Lipiec',
-        8 => 'Sieprień',
-        9 => 'Wrzesień',
-        10 => 'Październik',
-        11 => 'Listopad',
-        12 => 'Grudzień'
+        1 => $app->trans('January'),
+        2 => $app->trans('Luty'),
+        3 => $app->trans('Marzec'),
+        4 => $app->trans('Kwiecień'),
+        5 => $app->trans('Maj'),
+        6 => $app->trans('Czerwiec'),
+        7 => $app->trans('Lipiec'),
+        8 => $app->trans('Sieprień'),
+        9 => $app->trans('Wrzesień'),
+        10 => $app->trans('Październik'),
+        11 => $app->trans('Listopad'),
+        12 => $app->trans('Grudzień')
     ));
     
-    $twig->addGlobal('srcDir', __DIR__ . '/../');
+    $twig->addGlobal('srcDir', __DIR__ . '/');
     
     return $twig;
 });
 
-$app['twig.loader.filesystem']->addPath(__DIR__ . '/../', 'src');
+$app['twig.loader.filesystem']->addPath(__DIR__ . '/', 'src');
 
 /**
  * FIREWALL / SECURITY

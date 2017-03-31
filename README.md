@@ -37,6 +37,8 @@ Use this for any Silex 2 project, this package comes with:
 4. Configure `config.rb` to your needs if you are using SASS
 5. Edit `src/controller/Services.php`:
   - Add your twig extensions here (or do it later)
+  - Change default language in `locale_fallback`
+  - Add your xliff translation files if required (example Polish translation provided, create other similar to it)
   - Uncomment and change Query classes for user model for Security and User services (read comments in file)
   - ^ *above not required if you don't need user control* ^
 6. Create structure of files in `src` dir as you require with this guideance:

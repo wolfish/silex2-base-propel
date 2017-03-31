@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="world">
+                <source>world</source>
+                <target>świecie</target>
+            </trans-unit>
+            <trans-unit id="january">
+                <source>January</source>
+                <target>Styczeń</target>
+            </trans-unit>
+            <trans-unit id="february">
+                <source>February</source>
+                <target>Luty</target>
+            </trans-unit>
+            <trans-unit id="march">
+                <source>March</source>
+                <target>Marzec</target>
+            </trans-unit>
+            <trans-unit id="april">
+                <source>April</source>
+                <target>Kwiecień</target>
+            </trans-unit>
+            <trans-unit id="may">
+                <source>May</source>
+                <target>Maj</target>
+            </trans-unit>
+            <trans-unit id="june">
+                <source>June</source>
+                <target>Czerwiec</target>
+            </trans-unit>
+            <trans-unit id="july">
+                <source>July</source>
+                <target>Lipiec</target>
+            </trans-unit>
+            <trans-unit id="august">
+                <source>August</source>
+                <target>Sierpień</target>
+            </trans-unit>
+            <trans-unit id="september">
+                <source>September</source>
+                <target>Wrzesień</target>
+            </trans-unit>
+            <trans-unit id="october">
+                <source>October</source>
+                <target>Październik</target>
+            </trans-unit>
+            <trans-unit id="november">
+                <source>November</source>
+                <target>Listopad</target>
+            </trans-unit>
+            <trans-unit id="december">
+                <source>December</source>
+                <target>Grudzień</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

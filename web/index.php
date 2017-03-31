@@ -1,7 +1,11 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$app = new Silex\Application();
+class MyApplication extends Silex\Application {
+    use Silex\Application\TranslationTrait;
+}
+
+$app = new MyApplication();
 
 // set debug mode
 $app['debug'] = true;
@@ -15,13 +19,13 @@ if ($app['debug']) {
     error_reporting(null);
 }
 
-// Add global constants here (if a lot, move it to seperate file)
+// Add global constants here (if a lot, move it to separate file)
 const upload_dir = __DIR__ . '/uploads/';
 const web_dir = __DIR__ . '/';
 const project_dir = __DIR__ . '/../';
 
 // services (firewall, twig, user, etc)
-require_once __DIR__ . '/../src/controller/Services.php';
+require_once __DIR__ . '/../src/Services.php';
 
 // Add your controllers here!
 require_once __DIR__ . '/../src/controller/MyController.php';
