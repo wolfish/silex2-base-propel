@@ -54,6 +54,30 @@
                 <source>December</source>
                 <target>Grudzień</target>
             </trans-unit>
+            <trans-unit id="password">
+                <source>Password</source>
+                <target>Hasło</target>
+            </trans-unit>
+            <trans-unit id="sign_in">
+                <source>Sign in</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="logout">
+                <source>Logout</source>
+                <target>Wyloguj</target>
+            </trans-unit>
+            <trans-unit id="go_to_admin_panel">
+                <source>Go to admin panel</source>
+                <target>Przejdź do panelu admina</target>
+            </trans-unit>
+            <trans-unit id="you_are_logged">
+                <source>You are logged</source>
+                <target>Jesteś zalogowany</target>
+            </trans-unit>
+            <trans-unit id="you_are_not_logged">
+                <source>You are NOT logged</source>
+                <target>NIE jesteś zalogowany</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

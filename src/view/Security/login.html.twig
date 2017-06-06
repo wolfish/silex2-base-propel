@@ -1,0 +1,10 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {{ 'You are logged!'|trans }}
+    <a href="{{ path('logout') }}">{{ 'Logout'|trans }}</a>
+{% else %}
+    {{ error }}
+    {{ last_username }}
+    <form action="{{ path('admin_login_check') }}" method="post">
+        {{ form_widget(form) }}
+    </form>
+{% endif %}

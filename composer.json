@@ -7,7 +7,12 @@
 		"propel/propel-service-provider-2" : "dev-master",
 		"symfony/security" : "^3.1",
 		"symfony/translation" : "^3.1",
-		"symfony/config": "^3.2"
+		"symfony/config": "^3.2",
+		"symfony/console": "^3.2",
+		"knplabs/console-service-provider": "^2.0",
+		"symfony/form": "^3.2",
+		"symfony/validator": "^3.2",
+		"symfony/security-csrf": "^3.3"
 	},
 	"autoload" : {
 		"psr-0" : {

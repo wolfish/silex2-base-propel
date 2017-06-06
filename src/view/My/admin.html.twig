@@ -1,0 +1,9 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {{ 'You are logged'|trans }}
+    <br>
+    <a href="{{ path('admin_logout') }}">{{ 'Logout'|trans }}</a>
+{% else %}
+    {{ 'You are NOT logged'|trans }}
+    <br>
+    <a href="{{ path('login') }}">{{ 'Login'|trans }}</a>
+{% endif %}

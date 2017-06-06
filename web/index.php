@@ -24,10 +24,16 @@ const upload_dir = __DIR__ . '/uploads/';
 const web_dir = __DIR__ . '/';
 const project_dir = __DIR__ . '/../';
 
-// services (firewall, twig, user, etc)
-require_once __DIR__ . '/../src/Services.php';
+// services (propel, twig, translate, etc)
+require_once __DIR__ . '/../src/library/UserProvider.php';
+require_once __DIR__ . '/../src/library/Services.php';
+$app->boot();
+
+// additional libraries that require to be included AFTER boot() when services are ready
+require_once __DIR__ . '/../src/library/Twig.php';
 
 // Add your controllers here!
+require_once __DIR__ . '/../src/controller/SecurityController.php';
 require_once __DIR__ . '/../src/controller/MyController.php';
 
 $app->run();
