@@ -17,6 +17,9 @@ $app->extend('twig', function ($twig, $app) {
         return sprintf('/%s', ltrim($asset, '/../'));
     }));
 
+    $twig->addGlobal('srcDir', __DIR__ . '/../');
+
+    // Custom methods/globals (example: monthArray)
     $twig->addGlobal('monthArray', array(
         1 => $app->trans('January'),
         2 => $app->trans('February'),
@@ -32,7 +35,11 @@ $app->extend('twig', function ($twig, $app) {
         12 => $app->trans('December')
     ));
 
-    $twig->addGlobal('srcDir', __DIR__ . '/../');
+    // Twig layouts (add them here, or use existing)
+    $twig->addGlobal('layout', null);
+    $twig->addGlobal('layoutAdmin', null);
+    $twig->addGlobal('layout', $twig->loadTemplate('view/layout.html.twig'));
+    $twig->addGlobal('layoutAdmin', $twig->loadTemplate('view/layoutAdmin.html.twig'));
 
     return $twig;
 });

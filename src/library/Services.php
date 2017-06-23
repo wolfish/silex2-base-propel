@@ -28,10 +28,11 @@ $app->register(new Propel\Silex\PropelServiceProvider(), array(
  */
 $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallbacks' => array('en'),
+    'locale_fallbacks' => array('en'), // Set your default language here
 ));
 
 $app->extend('translator', function($translator) {
+    // Add your translation xlf files here (example: Polish translation)
     $translator->addResource('xliff', __DIR__ . '/../translation/pl.xlf', 'pl');
     return $translator;
 });

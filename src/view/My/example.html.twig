@@ -1,3 +1,6 @@
+{% extends layout %}
+
+{% block body %}
 {{ hello }} {{ 'world'|trans }}!
 <br>
 <a href="{{ url('homepage') }}">Homepage</a>
@@ -7,3 +10,4 @@
 {% for month in monthArray %}
     <p>{{ month }}</p>
 {% endfor %}
+{% endblock %}

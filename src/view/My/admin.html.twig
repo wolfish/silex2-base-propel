@@ -1,3 +1,6 @@
+{% extends layoutAdmin %}
+
+{% block body %}
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     {{ 'You are logged'|trans }}
     <br>
@@ -7,3 +10,4 @@
     <br>
     <a href="{{ path('login') }}">{{ 'Login'|trans }}</a>
 {% endif %}
+{% endblock %}
