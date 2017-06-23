@@ -1,13 +1,40 @@
 {% extends layout %}
 
+{% block stylesheets %}
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-{{ hello }} {{ 'world'|trans }}!
-<br>
-<a href="{{ url('homepage') }}">Homepage</a>
-<br>
-<a href="{{ url('admin') }}">{{ 'Go to admin panel'|trans }}</a>
-<br>
-{% for month in monthArray %}
-    <p>{{ month }}</p>
-{% endfor %}
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">{{ hello }} {{ 'world'|trans }}!</h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                <li class="active"><a href="{{ url('homepage') }}">Homepage</a></li>
+                                <li><a href="{{ url('admin') }}">{{ 'Go to admin panel'|trans }}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    <h1 class="cover-heading">{{ hello }} {{ 'world'|trans }}!</h1>
+                    {% for month in monthArray %}
+                        <p class="lead">{{ month }}</p>
+                    {% endfor %}
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}

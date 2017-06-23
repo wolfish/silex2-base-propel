@@ -1,13 +1,26 @@
 {% extends layoutAdmin %}
 
+{% block stylesheets %}
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    {{ 'You are logged'|trans }}
-    <br>
-    <a href="{{ path('admin_logout') }}">{{ 'Logout'|trans }}</a>
-{% else %}
-    {{ 'You are NOT logged'|trans }}
-    <br>
-    <a href="{{ path('login') }}">{{ 'Login'|trans }}</a>
-{% endif %}
+    <div class="container">
+        <div class="starter-template">
+            <h1>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {{ 'You are logged'|trans }}
+            {% else %}
+                {{ 'You are NOT logged'|trans }}
+            {% endif %}
+            </h1>
+
+            <br>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href="{{ path('admin_logout') }}" class="lead">{{ 'Logout'|trans }}</a>
+            {% else %}
+                <a href="{{ path('login') }}" class="lead">{{ 'Login'|trans }}</a>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

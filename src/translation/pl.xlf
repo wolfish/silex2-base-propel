@@ -78,6 +78,14 @@
                 <source>You are NOT logged</source>
                 <target>NIE jesteś zalogowany</target>
             </trans-unit>
+            <trans-unit id="email_address">
+                <source>Email address</source>
+                <target>Adres email</target>
+            </trans-unit>
+            <trans-unit id="please_sign_in">
+                <source>Please sign in</source>
+                <target>Zaloguj się</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

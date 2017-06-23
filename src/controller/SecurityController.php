@@ -15,15 +15,25 @@ function buildLoginForm($app) {
                 new Assert\NotBlank(),
                 new Assert\Email()
             ),
-            'label' => 'Login'
+            'attr' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Email address'
+            )
         ))
         ->add('_password', PasswordType::class, array(
             'constraints' => array(
                 new Assert\NotBlank()
+            ),
+            'attr' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Password'
             )
         ))
         ->add('submit', SubmitType::class, array(
-            'label' => 'Sign in'
+            'label' => 'Sign in',
+            'attr' => array(
+                'class' => 'btn btn-lg btn-primary btn-block'
+            )
         ))
         ->getForm();
 }

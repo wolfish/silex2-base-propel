@@ -1,8 +1,22 @@
 {% extends layoutAdmin %}
 
+{% block stylesheets %}
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-{{ error }}
-<form action="{{ path('admin_login_check') }}" method="post">
-    {{ form_widget(form) }}
-</form>
+{% if error %}
+    <div class="alert alert-danger text-center" role="alert">{{ error }}</div>
+{% endif %}
+
+<div class="container">
+    <form class="form-signin" action="{{ path('admin_login_check') }}" method="post">
+        <h2 class="form-signin-heading">{{ 'Please sign in'|trans }}</h2>
+        <label for="_username" class="sr-only">Email address</label>
+        {{ form_widget(form._username) }}
+        <label for="_password" class="sr-only">Password</label>
+        {{ form_widget(form._password) }}
+        {{ form_widget(form.submit) }}
+    </form>
+</div>
 {% endblock %}
