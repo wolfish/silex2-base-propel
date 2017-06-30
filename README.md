@@ -12,6 +12,8 @@ Use this for any Silex 2 project, this package comes with:
 - Forms provider (with CSRF protection)
 - Console provider (with some helpful tools)
 - Some small examples
+- (optionally) Bootstrap 3 with Sass
+- (optionally) Font-awesome
 
 ## What is it good for?
 I'm using this as start-base for small to medium custom applications, to hold onto some
@@ -22,7 +24,7 @@ like me, then you probably will find it useful for building some webapps without
 pain of configuring services, preparing stuff, etc.
 
 ## How to start?
-1. Download latest release and unpack it in your project dir
+1. Download latest release and unpack it in your project dir (get version `bootstrap-fa` if you want Bootstrap & Font-awesome)
 2. Run `composer install` (if you don't have composer [go get it](https://getcomposer.org/download/))
 
 ### Configuring database (Propel)
@@ -69,7 +71,7 @@ If you want to use different user table or make other changes - edit it in `src/
 **(this command works only with default `my_user` table!)**
 
 ### Start working
-1. Create structure of files in `src` dir as you require with this guideance:
+1. Create structure of files in `src` dir as you require with this guidance:
   - Put controllers in `src/controller` and views in `src/view/ControllerName/`
   - It's recommended to create directories for views like for `frontendController.php` it could be `src/view/Frontend/myView.html.twig`
 2. Add your controllers in `web/index.php`
